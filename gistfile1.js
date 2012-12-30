@@ -1,7 +1,7 @@
 var angle = 0; //in degrees
 //jquery ui slider, popup alerting instructions
 if(typeof(jQuery) == 'undefined') { //load jquery if it doesnt exist
-done = false;
+done = false; //orz
 var s = document.createElement('script');
 s.type='text/javascript';document.body.appendChild(s);
 s.src='http://code.jquery.com/jquery-latest.js';
