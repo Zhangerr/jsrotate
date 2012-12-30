@@ -1,4 +1,4 @@
-var angle = 0;
+var angle = 0; //in degrees
 //jquery ui slider, popup alerting instructions
 if(typeof(jQuery) == 'undefined') { //load jquery if it doesnt exist
 done = false;
