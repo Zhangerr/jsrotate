@@ -17,17 +17,19 @@ console.log('jquery loaded');
 } else {
 main();
 }
-// 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;display:inline-block;margin:0 0.1em;text-shadow:0 1px 0 #fff;line-height:1.4;white-space:nowrap; 
+
 function main() {
-$("body").css({"-webkit-transition":"all 0.1s"}); 
-$("body").append("<div style='position:absolute;left:0;top:0;background-color:#eee;border:1px solid grey; padding:5px;'>Press <kbd>a</kbd> or <kbd>d</kbd> to rotate me!</div>");
+$("<style type='text/css'>kbd{padding:0.1em 0.6em;border:1px solid #ccc;font-size:11px;font-family:Arial,Helvetica,sans-serif;background-color:#f7f7f7;color:#333;-moz-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;display:inline-block;margin:0 0.1em;text-shadow:0 1px 0 #fff;line-height:1.4;white-space:nowrap;} </style>").appendTo("head");
+$("body").wrapInner("<div class='rotate-content' />")
+$(".rotate-content").css({"-webkit-transition":"all 0.1s"}); 
+$("body").append("<div style='position:absolute;left:5px;top:5px;background-color:#eee;border:1px solid grey; padding:5px;'>Press <kbd>a</kbd> or <kbd>d</kbd> to rotate me!</div>");
 $("body").keydown(function(e) {
 if(e.keyCode == 68) // a
 i++;
 else if(e.keyCode == 65) // d
 i--;
-$("body").css({"-webkit-transform":"rotate("+i+"deg)"}); 
-console.log($("body").css("-webkit-transform")); 
+$(".rotate-content").css({"-webkit-transform":"rotate("+i+"deg)"}); 
+console.log($(".rotate-content").css("-webkit-transform")); 
 console.log(e.keyCode);
  });
 void(0); //dont return anything
