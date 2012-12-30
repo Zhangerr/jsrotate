@@ -25,9 +25,9 @@ $(".rotate-content").css({"-webkit-transition":"all 0.2s"});
 $("body").append("<div style='position:fixed;left:5px;top:5px;background-color:#eee;border:1px solid grey; padding:5px;'>Press <kbd>a</kbd> or <kbd>d</kbd> to rotate me!</div>");
 $("body").keydown(function(e) {
 if(e.keyCode == 68) // a
-angle++;
+angle+=2;
 else if(e.keyCode == 65) // d
-angle--;
+angle-=2;
 $(".rotate-content").css({"-webkit-transform":"rotate("+angle+"deg)"}); 
  });
 void(0); //dont return anything
