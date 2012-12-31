@@ -13,12 +13,9 @@ s.src='http://code.jquery.com/jquery-latest.js';
 s.onload = s.onreadystatechange = function () {
             if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
                 done = true;	
-				$.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
-					if(c.status==200) {
 			
 						main();
-					}
-				});				
+			
                 s.onload = s.onreadystatechange = null;               
             }
         };
