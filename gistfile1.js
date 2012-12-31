@@ -4,7 +4,7 @@ var angleX = 0; //degrees
 var angleY = 0;
 var readInput = true;
 //jquery ui sliders or html5 and place to enter numerical value for angle with longer transition time in popup alerting instructions
-if(typeof(jQuery) == 'undefined') { //load jquery if it doesnt exist
+if(true) { //load jquery if it doesnt exist
 done = false; //orz
 var s = document.createElement('script');
 s.type='text/javascript';document.body.appendChild(s);
@@ -28,7 +28,7 @@ $.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
 if(c.status==200) {
 	main();
 	}
-	});
+});
 }
 
 function main() {
