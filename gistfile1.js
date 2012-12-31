@@ -32,7 +32,7 @@ if(c.status==200) {
 }
 //display actual degrees in label line
 function main() {
-$("<style type='text/css'>.keys{padding:0.1em 0.6em;border:1px solid #ccc;font-size:11px;font-family:Arial,Helvetica,sans-serif;background-color:#f7f7f7;color:#333;-moz-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;display:inline-block;margin:0 0.1em;text-shadow:0 1px 0 #fff;line-height:1.4;white-space:nowrap;} .rotate-ui{opacity:0.3;-webkit-transition:all 0.5s;} .rotate-ui:hover{opacity:1;} .rotate-ui > div > div {margin-bottom:10px;margin-top:5px;} #slider .ui-slider-range { background: #ef2929;} #sliderX .ui-slider-range { background: #8ae234;}  #sliderY .ui-slider-range { background: #729fcf;} </style>").appendTo("head");
+$("<style type='text/css'>.keys{padding:0.1em 0.6em;border:1px solid #ccc;font-size:11px;font-family:Arial,Helvetica,sans-serif;background-color:#f7f7f7;color:#333;-moz-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;display:inline-block;margin:0 0.1em;text-shadow:0 1px 0 #fff;line-height:1.4;white-space:nowrap;} .rotate-ui{opacity:0.3;-webkit-transition:opacity 0.5s;} .rotate-ui:hover{opacity:1;} .rotate-ui > div > div {margin-bottom:10px;margin-top:5px;} #slider .ui-slider-range { background: #ef2929;} #sliderX .ui-slider-range { background: #8ae234;}  #sliderY .ui-slider-range { background: #729fcf;} </style>").appendTo("head");
 $('<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />').appendTo("head");
 $("body").wrapInner("<div class='rotate-content' />")
 $(".rotate-content").css({"-webkit-transition":"all 0.2s"}); 
@@ -49,6 +49,7 @@ $( "#sliderY" ).slider({range: "min",
     slide: function( event, ui ) {angleY = (ui.value/100) * 360;
 	$(".rotate-content").css({"-webkit-transform":"rotate("+angle+"deg) rotateX(" + angleX + "deg) rotateY(" + angleY +"deg)"}); }
 });
+$(".rotate-ui").draggable();
 /*$(document).keypress(function(e) {
 console.log(e);
 });*/
