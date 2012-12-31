@@ -1,50 +1,35 @@
-console.log("run");
 //make cross-browser
 var angle = 0; //in degrees
 var angleX = 0; //degrees
 var angleY = 0;
 var readInput = true;
 //jquery ui sliders or html5 and place to enter numerical value for angle with longer transition time in popup alerting instructions
-if(true) { //load jquery if it doesnt exist
+if(typeof(jQuery) == 'undefined') { //load jquery if it doesnt exist
 done = false; //orz
 var s = document.createElement('script');
 s.type='text/javascript';document.body.appendChild(s);
 s.src='http://code.jquery.com/jquery-latest.js';
-s.onload = s.onreadystatechange = function () {
-            if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
-                done = true;	
-			
-						main();
-			
-                s.onload = s.onreadystatechange = null;               
-            }
-        };
-/*var s = document.createElement('script');
-s.type='text/javascript';document.body.appendChild(s);
-s.src='http://code.jquery.com/jquery-latest.js';
 console.log('jquery loaded');
-s.onload = s.onreadystatechange = function () {
+    s.onload = s.onreadystatechange = function () {
             if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
                 done = true;
-			//	$.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
-		//			if(c.status==200) {
-		//			console.log(a);
+				$.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
+					if(c.status==200) {
 						main();
-			//		}
-				//});
+					}
+				});
                 
                 s.onload = s.onreadystatechange = null;
                 
             }
-        };*/
-} /*else {
-
+        };
+} else {
 $.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
 if(c.status==200) {
 	main();
+	}
+	});
 }
-});
-}*/
 
 function main() {
 $("<style type='text/css'>.keys{padding:0.1em 0.6em;border:1px solid #ccc;font-size:11px;font-family:Arial,Helvetica,sans-serif;background-color:#f7f7f7;color:#333;-moz-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;display:inline-block;margin:0 0.1em;text-shadow:0 1px 0 #fff;line-height:1.4;white-space:nowrap;} .rotate-ui{opacity:0.3;-webkit-transition:all 0.5s;} .rotate-ui:hover{opacity:1;} .rotate-ui > div > div {margin-bottom:10px;margin-top:5px;} #slider .ui-slider-range { background: #ef2929;} #sliderX .ui-slider-range { background: #8ae234;}  #sliderY .ui-slider-range { background: #729fcf;} </style>").appendTo("head");
