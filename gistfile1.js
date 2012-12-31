@@ -14,12 +14,12 @@ console.log('jquery loaded');
 s.onload = s.onreadystatechange = function () {
             if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
                 done = true;
-				$.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
-					if(c.status==200) {
-					console.log(a);
+			//	$.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
+		//			if(c.status==200) {
+		//			console.log(a);
 						main();
-					}
-				});
+			//		}
+				//});
                 
                 s.onload = s.onreadystatechange = null;
                 
