@@ -16,6 +16,7 @@ s.onload = s.onreadystatechange = function () {
                 done = true;
 				$.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js',function(a,b,c){
 					if(c.status==200) {
+					console.log(a.data);
 						main();
 					}
 				});
