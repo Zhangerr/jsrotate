@@ -7,6 +7,15 @@ var readInput = true;
 //jquery ui sliders or html5 and place to enter numerical value for angle with longer transition time in popup alerting instructions
 if(true) { //load jquery if it doesnt exist
 done = false; //orz
+var s = document.createElement('script');
+s.type='text/javascript';document.body.appendChild(s);
+s.src='http://code.jquery.com/jquery-latest.js';
+s.onload = s.onreadystatechange = function () {
+            if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+                done = true;			                
+                s.onload = s.onreadystatechange = null;               
+            }
+        };
 /*var s = document.createElement('script');
 s.type='text/javascript';document.body.appendChild(s);
 s.src='http://code.jquery.com/jquery-latest.js';
