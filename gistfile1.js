@@ -50,7 +50,7 @@ function main() {
     $(".rotate-content").css({
         "-webkit-transition": "all 0.2s"
     });
-    $("body").append("<div class='rotate-ui' style='font-size:13px;text-align:left;text-color:black;z-index:999999;position:fixed;left:5px;top:5px;background-color:#eee;border:1px solid grey;font-family:Tahoma,Arial; padding:5px;'><h3>rotation controls <a href='http://zhanger.us' target='_blank'>by alex</a></h3><div class='input-state'>keyboard rotation enabled</div>Press <kbd class='keys'>a</kbd> or <kbd class='keys'>d</kbd> to rotate me!<br />Press <kbd class='keys'>w</kbd> or <kbd class='keys'>s</kbd> to rotate in the X axis. <br />Press <kbd class='keys'>q</kbd> or <kbd class='keys'>e</kbd> to rotate in the Y axis. <br /> Press <kbd class='keys'>alt</kbd> to toggle keyboard input. <br /> Press <kbd class='keys'>r</kbd> to reset all rotations <br /> note that rotating in the x or y axises may be glitchy <div style='padding:10px;'>Z axis: <span class='z-label angle-label'>0 deg</span><div id='slider' class='z-label angle-slider' style=''></div>X axis: <span class='x-label angle-label'>0 deg</span><div class='x-label angle-slider' id='sliderX' style=''></div>Y axis: <span class='y-label angle-label'>0 deg</span><div class='y-label angle-slider' id='sliderY' style=''></div></div></div>");
+    $("body").append("<div class='rotate-ui' style='font-size:13px;text-align:left;text-color:black;z-index:999999;position:fixed;left:5px;top:5px;background-color:#eee;border:1px solid grey;font-family:Tahoma,Arial; padding:5px;'><h3 class='ui-widget-header'>rotation controls <a href='http://zhanger.us' target='_blank'>by alex</a></h3><div class='input-state'>keyboard rotation enabled</div>Press <kbd class='keys'>a</kbd> or <kbd class='keys'>d</kbd> to rotate me!<br />Press <kbd class='keys'>w</kbd> or <kbd class='keys'>s</kbd> to rotate in the X axis. <br />Press <kbd class='keys'>q</kbd> or <kbd class='keys'>e</kbd> to rotate in the Y axis. <br /> Press <kbd class='keys'>alt</kbd> to toggle keyboard input. <br /> Press <kbd class='keys'>r</kbd> to reset all rotations <br /> note that rotating in the x or y axises may be glitchy <div style='padding:10px;'>Z axis: <span class='z-label angle-label'>0 deg</span><div id='slider' class='z-label angle-slider' style=''></div>X axis: <span class='x-label angle-label'>0 deg</span><div class='x-label angle-slider' id='sliderX' style=''></div>Y axis: <span class='y-label angle-label'>0 deg</span><div class='y-label angle-slider' id='sliderY' style=''></div></div></div>");
     $('.z-label').data('angle', angleObj);
     $('.y-label').data('angle', angleYObj);
     $('.x-label').data('angle', angleXObj);
@@ -67,6 +67,7 @@ function main() {
         }
     });
     $(".rotate-ui").draggable();
+	$(".rotate-ui").resizable();
     $(document).keydown(function (e) {
         //console.log(e);
         if (e.which == 18) { //right alt
