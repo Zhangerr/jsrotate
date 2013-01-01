@@ -68,6 +68,7 @@ function main() {
     });
     $(".rotate-ui").draggable();
 	$(".rotate-ui").resizable();
+	$(".rotate-ui").css("position","fixed");
     $(document).keydown(function (e) {
         //console.log(e);
         if (e.which == 18) { //right alt
