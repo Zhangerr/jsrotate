@@ -1,4 +1,4 @@
-var angleObj = {
+(var angleObj = {
     angle: 0
 };
 var angleXObj = {
@@ -111,4 +111,4 @@ function main() {
         }
     });
     void(0); //dont return anything
-}
+})();
