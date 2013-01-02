@@ -1,4 +1,5 @@
 //script doesn't work on opera when setting 3d properties (rotateX, rotateY)
+
 var angleObj = {
     angle: 0
 };
