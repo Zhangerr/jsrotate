@@ -122,7 +122,7 @@ function main() {
                 );
 				} else {
 				$(".rotate-content").css(
-                    "transform","rotate(" + angleObj.angle + "deg)";
+                    "transform","rotate(" + angleObj.angle + "deg)"
                 );
 				}
 
