@@ -1,5 +1,5 @@
 //script doesn't work on opera when setting 3d properties (rotateX, rotateY)
-
+//implement scale
 var angleObj = {
     angle: 0
 };
@@ -24,7 +24,9 @@ if (true) { //load jquery if it doesnt exist (for now force true to get latest v
             jQuery.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js', function (a, b, c) {
                 if (c.status == 200) {
                     main();
-                }
+                } else {
+					console.log("error loading jquery ui");
+				}
             });
 
             s.onload = s.onreadystatechange = null;
