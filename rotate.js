@@ -67,12 +67,13 @@ function main() {
                 $(this).html(Math.round($(this).data('angle').angle) + " deg")
             });
 			if(typeof($.browser) != 'undefined' && !$.browser.opera) {
-            $(".rotate-content").css(
-                "transform", "rotate(" + angleObj.angle + "deg) rotateX(" + angleXObj.angle + "deg) rotateY(" + angleYObj.angle + "deg)"
+            
+			$(".rotate-content").css(
+                "transform", "rotate(" + angleObj.angle + "deg)"
             );
 			} else {
 			$(".rotate-content").css(
-                "transform", "rotate(" + angleObj.angle + "deg)"
+                "transform", "rotate(" + angleObj.angle + "deg) rotateX(" + angleXObj.angle + "deg) rotateY(" + angleYObj.angle + "deg)"
             );
 			}
         }
@@ -117,13 +118,13 @@ function main() {
                 $('.angle-label').each(function () {
                     $(this).html(Math.round($(this).data('angle').angle) + " deg")
                 });
-				if(typeof($.browser) != 'undefined' && !$.browser.opera) {
+				if(typeof($.browser) != 'undefined' && $.browser.opera) {
                 $(".rotate-content").css(
-                    "transform","rotate(" + angleObj.angle + "deg) rotateX(" + angleXObj.angle + "deg) rotateY(" + angleYObj.angle + "deg)"
-                );
-				} else {
-				$(".rotate-content").css(
                     "transform","rotate(" + angleObj.angle + "deg)"
+                );
+				} else {				
+				$(".rotate-content").css(
+                    "transform","rotate(" + angleObj.angle + "deg) rotateX(" + angleXObj.angle + "deg) rotateY(" + angleYObj.angle + "deg)"
                 );
 				}
 
